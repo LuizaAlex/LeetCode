@@ -1,0 +1,26 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int nums1Iterator = 0;
+        int [] result; 
+        result = new int[n+m];
+        int nums2Iterator = 0; 
+        for(int i =0; i<n+m;i++){
+            if(nums1Iterator < m && (nums2Iterator >= n || nums1[nums1Iterator] <= nums2[nums2Iterator])){
+                result[i] = nums1[nums1Iterator];
+                nums1Iterator++;
+
+            }
+            else
+            
+            {
+                result[i] = nums2[nums2Iterator];
+                nums2Iterator++;
+            }
+
+        }
+
+        for(int i=0; i<n+m;i++){
+            nums1[i]= result[i];
+        }
+    }
+}
