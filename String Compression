@@ -1,0 +1,50 @@
+Given an array of characters chars, compress it using the following algorithm:
+
+Begin with an empty string s. For each group of consecutive repeating characters in chars:
+
+If the group's length is 1, append the character to s.
+Otherwise, append the character followed by the group's length.
+The compressed string s should not be returned separately, but instead, be stored in the input character array chars. Note that group lengths that are 10 or longer will be split into multiple characters in chars.
+
+After you are done modifying the input array, return the new length of the array.
+
+You must write an algorithm that uses only constant extra space.
+
+class Solution {
+    public int compress(char[] chars) {
+          int indexCompressedArray = 0;
+        int count = 1; // count of consecutive repeating characters
+        char prevChar = chars[0];
+
+        for(int i =1; i< chars.length; i++){
+            if(chars[i] == prevChar) {
+                count++; // increment count for consecutive repeating characters
+            }
+            else{
+                chars[indexCompressedArray++] = prevChar;
+                // If count is greater than 1, append count as a separate character(s)
+                if (count > 1) {
+                    String countStr = String.valueOf(count);
+                    for (char c : countStr.toCharArray()) {
+                        chars[indexCompressedArray++] = c;
+                    }
+                }
+
+                prevChar = chars[i]; // Update previous character
+                count = 1; // Reset count for the new character
+            }
+        }
+
+        // Process the last group of characters
+        chars[indexCompressedArray++] = prevChar;
+        if (count > 1) {
+            String countStr = String.valueOf(count);
+            for (char c : countStr.toCharArray()) {
+                chars[indexCompressedArray++] = c;
+            }
+        }
+
+      return indexCompressedArray;
+        
+    }
+}
