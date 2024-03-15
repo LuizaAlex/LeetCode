@@ -1,5 +1,5 @@
 # LeetCode Problem Writeup
-## Problem Title: [String Compression](https://leetcode.com/problems/string-compression/description/?envType=study-plan-v2&envId=leetcode-75)
+## Problem Title: [String Compression](https://leetcode.com/problems/string-compression/description)
 
 ### Problem Description:
 Given an array of characters chars, compress it using the following algorithm:
