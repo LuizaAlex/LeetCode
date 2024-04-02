@@ -45,7 +45,8 @@ class Solution {
 
 ## Complexity Analysis:
 
-![image](https://github.com/LuizaAlex/LeetCode/assets/123961367/5c0ef00b-e141-4993-96c4-2003fce77cc0)
+![image](https://github.com/LuizaAlex/LeetCode/assets/123961367/8fc0a3c1-ed77-4356-9278-6b1b9d4bd913)
+
 
 **Time Complexity:**<br>
 1. The algorithm traverses the array of words once, and for each word, it performs a search operation using the indexOf method, which has a time complexity of O(m), 
